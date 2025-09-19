@@ -1,0 +1,40 @@
+package com.inner.classes;
+
+public class OrdineRossi {
+	
+	private String nomeCliente;
+	private String cognomeCliente;
+	private long partitaIva; 
+	private long fatturaCliente;
+	
+	public OrdineRossi(String nomeCliente, String cognomeCliente, long partitaIva, long fatturaCliente) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.cognomeCliente = cognomeCliente;
+		this.partitaIva = partitaIva;
+		this.fatturaCliente = fatturaCliente;
+	}
+
+	public class Prodotto {
+		private int idProdotto;
+		private String nomeProdotto;
+		private int quantitàProdotto;
+		private double prezzoProdotto;
+		
+		public Prodotto(int idProdotto, String nomeProdotto, int quantitàProdotto, double prezzoProdotto) {
+			super();
+			this.idProdotto = idProdotto;
+			this.nomeProdotto = nomeProdotto;
+			this.quantitàProdotto = quantitàProdotto;
+			this.prezzoProdotto = prezzoProdotto;
+		}
+		
+		
+		
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

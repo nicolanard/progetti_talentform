@@ -1,0 +1,59 @@
+package com.oop.interfaces;
+
+public class Autonomi implements IArtigiano, ICommerciante {
+	
+	private int redditoAnnuoLordo;
+    private int coeffRedd;
+    private int tassaIrpef;
+    private int tassaInps;
+    private int aliquotaInps;
+    private int importoEccedente;
+    
+	
+
+	@Override
+	public int getUtile() {
+		return redditoAnnuoLordo * coeffRedd / 100;
+	}
+
+	@Override
+	public int getCifraIrpef() {
+		return getUtile() * tassaIrpef / 100;
+	}
+
+	@Override
+	public int getCifraInps() {
+		return getUtileEccedente() * aliquotaInps / 100;
+	}
+	
+	@Override
+	public int getUtileEccedente() {
+		return (redditoAnnuoLordo - importoEccedente) * coeffRedd / 100;
+	}
+
+	@Override
+	public int getRedditoNetto() {
+		return redditoAnnuoLordo - (getCifraInps() + getCifraIrpef() + tassaInps);
+	}
+	
+	public Autonomi(int redditoAnnuoLordo, int coeffRedd, int tassaIrpef, int tassaInps, int aliquotaInps,
+			int importoEccedente) {
+		this.redditoAnnuoLordo = redditoAnnuoLordo;
+		this.coeffRedd = coeffRedd;
+		this.tassaIrpef = tassaIrpef;
+		this.tassaInps = tassaInps;
+		this.aliquotaInps = aliquotaInps;
+		this.importoEccedente = importoEccedente;
+	}
+	
+	public static void main(String[] args) {
+		
+		Autonomi a = new Autonomi(90000, 67, 15, 3500, 24, 15000);
+		
+		System.out.println(a.getRedditoNetto());
+		
+		
+
+	}
+
+}

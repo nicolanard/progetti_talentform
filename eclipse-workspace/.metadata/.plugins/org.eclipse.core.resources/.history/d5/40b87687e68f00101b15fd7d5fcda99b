@@ -1,0 +1,69 @@
+package com.oop.abstracts.classes;
+
+public class MainCellulare extends Cellulare{
+	
+	private double carica; // Quantitativo di euro disponibile per le chiamate
+	private int numeroChiamate; // Numero di chiamate effettuate con il cellulare
+	
+	//Costruttore
+	public MainCellulare(double unaCarica) {
+		this.carica = unaCarica;
+	}
+
+	
+	//Un metodo definito come public void ricarica(double unaRicarica), che ricarica il
+	//telefonino
+	@Override
+	public void ricarica(double unaCarica) {
+		if(unaCarica > 0) {
+			carica += unaCarica;
+		}
+	}
+
+	/*Effettua una chiamata di durata in minuti specificata dal parametro esplicito.
+	Tale metodo dovra' aggiornare la carica disponibile, ed incrementare la memoria
+	contenente il numero di chiamate effettuate dal telefonino*/
+	@Override
+	public void chiama(double minutiDurata) {
+		double costoChiamata = minutiDurata * 0.20;
+
+        if (minutiDurata > 0 && carica >= costoChiamata) {
+            carica -= costoChiamata;
+            numeroChiamate++;
+        } else {
+            System.out.println("Credito insufficiente o durata non valida.");
+        }
+	}
+
+
+	//Restituisce il valore della carica disponibile
+	@Override
+	public double numero404() {
+		return carica;
+	}
+
+
+	//Restituisce il valore della variabile d'istanza
+	//numeroChiamate.
+	@Override
+	public int getNumeroChiamate() {
+
+		return numeroChiamate;
+	}
+
+
+
+	@Override
+	public void azzeraChiamate() {
+
+		
+	}
+
+
+	public static void main (String[] args) {
+		
+		
+		
+	}
+
+}

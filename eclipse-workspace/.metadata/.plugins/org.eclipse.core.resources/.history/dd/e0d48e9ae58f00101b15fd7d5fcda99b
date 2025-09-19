@@ -1,0 +1,56 @@
+package com.oop.abstracts.classes;
+
+public class MainCellulare extends Cellulare{
+	
+	private double carica; // Quantitativo di euro disponibile per le chiamate
+	private int numeroChiamate; // Numero di chiamate effettuate con il cellulare
+	
+	@Override
+	public void ricarica() {
+		
+		
+	}
+
+
+
+	@Override
+	public void chiama() {
+		
+		
+	}
+
+
+
+	@Override
+	public double numero404() {
+
+		return 0;
+	}
+
+
+
+	@Override
+	public int getNumeroChiamate() {
+
+		return 0;
+	}
+
+
+
+	@Override
+	public void azzeraChiamate() {
+
+		
+	}
+	
+	public MainCellulare(double unaCarica) {
+		this.carica = unaCarica;
+	}
+
+
+
+	public static void main (String[] args) {
+		
+	}
+
+}

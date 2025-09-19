@@ -1,0 +1,19 @@
+package com.local.classes;
+
+public class Moltiplicazione{
+	
+	class Calcolo implements IOperazione{
+
+		@Override
+		public void calcolaProdotto(int a, int b) {
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+
+}

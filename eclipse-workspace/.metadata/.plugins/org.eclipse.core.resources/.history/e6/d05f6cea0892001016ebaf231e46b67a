@@ -1,0 +1,64 @@
+package com.oop.interfaces;
+
+public class AccountUnicredit implements IAccountUnicredit {
+	
+	private int balance;
+	private int firstDeposit;
+	private int firstDraw;
+	private int secondDeposit;
+	private int secondDraw;
+	private int interessi;
+	
+	
+
+	public AccountUnicredit(int balance, int firstDeposit, int firstDraw, int secondDeposit, int secondDraw,
+			int interessi) {
+		super();
+		this.balance = balance;
+		this.firstDeposit = firstDeposit;
+		this.firstDraw = firstDraw;
+		this.secondDeposit = secondDeposit;
+		this.secondDraw = secondDraw;
+		this.interessi = interessi;
+	}
+
+	@Override
+	public int getFirstDeposit() {
+
+		return 0;
+	}
+
+	@Override
+	public int getFirstDraw() {
+
+		return 0;
+	}
+
+	@Override
+	public int getSecondDeposit() {
+
+		return 0;
+	}
+
+	@Override
+	public int getSecondDraw() {
+
+		return 0;
+	}
+
+	public int getInteressi() {
+		return getSecondDraw() * interessi / 100;
+	}
+	
+	@Override
+	public int getTotalAccount() {
+
+		return 0;
+	}
+
+	public static void main(String[] args) {
+
+
+	}
+
+}

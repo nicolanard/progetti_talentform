@@ -1,0 +1,12 @@
+package com.oop.abstracts.classes;
+
+public class MainCellulare {
+	
+	private double carica; // Quantitativo di euro disponibile per le chiamate
+	private int numeroChiamate; // Numero di chiamate effettuate con il cellulare
+	
+	public static void main (String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.oop.abstracts.classes;
+
+public class MainLavoratoriAutonomi {
+
+	public static void main(String[] args) {
+		
+		MainLavoratoriAutonomi l = new MainLavoratoriAutonomi(3000, 22, 15000, 70000, 67, 24, 15);
+
+	}
+
+}

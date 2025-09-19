@@ -1,0 +1,62 @@
+package com.oop.abstracts.classes;
+
+public class DistributoreBenzinaMain extends DistributoreBenzinaAstratto {
+    
+    private double deposito;
+    private double euroPerLitro;
+    
+    public DistributoreBenzinaMain(double unPrezzoPerLitro) {
+        
+        this.euroPerLitro = unPrezzoPerLitro;
+        this.deposito = 0;
+    }
+    
+    @Override
+    public void rifornisci(double unaQuantita) {
+        
+        this.deposito += unaQuantita;
+    }
+
+    @Override
+    public void vendi(double euro, Car unaAutomobile) {
+        
+        unaAutomobile.addGas(euro);
+        
+        this.deposito -= euro / euroPerLitro;
+    }
+
+    @Override
+    public void aggiorna(double unPrezzoPerLitro) {
+        
+        this.euroPerLitro = unPrezzoPerLitro;
+    }
+    
+    public double getDeposito() {
+        
+        return this.deposito;
+    }
+    
+    public double getEuroPerLitro() {
+        
+        return this.euroPerLitro;
+    }
+
+    public static void main(String[] args) {
+
+        
+        DistributoreBenzinaMain distributore = new DistributoreBenzinaMain(1.734);
+        
+        Car macchina = new Car(30);
+        
+        distributore.rifornisci(300);
+        System.out.println("Nel deposito ci sono: " + distributore.getDeposito());
+        
+        distributore.vendi(25, macchina);
+        System.out.println("Nel deposito ci sono: " + distributore.getDeposito());
+        
+        distributore.aggiorna(1.654);
+        System.out.println("Il prezzo al momento corrisponde a: €" + distributore.getEuroPerLitro());
+        
+        System.out.println(macchina.getGas());
+    }
+}

@@ -1,0 +1,22 @@
+package com.inner.classes;
+
+public class Anagrafica {
+	
+	int telefono;
+	String documentoIdentità;
+	
+	public class Utente {
+		String nome;
+		String cognome;
+	}
+	
+	public void utente() {
+		System.out.println("Telefono: " + telefono + " Documento: " + documentoIdentità);
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

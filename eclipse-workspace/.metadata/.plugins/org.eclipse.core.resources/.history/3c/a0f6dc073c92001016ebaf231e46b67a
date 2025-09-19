@@ -1,0 +1,23 @@
+package com.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListNomi {
+
+	public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<String>();
+		
+		names.add("Nicola");
+		names.add("Giulia");
+		names.add("Arianna");
+		
+
+	      for (String people : names) {
+				System.out.println(people);
+			}
+		
+	}
+
+}

@@ -1,0 +1,98 @@
+package com.oop.classes.intro;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Esercizi{
+    /*public static void main(String[] args) {
+        ArrayList<Studente1> studenti = new ArrayList<>();
+        studenti.add(new Studente1("Marco", 19));
+        studenti.add(new Studente1("Lucia", 22));
+        studenti.add(new Studente1("Giovanni", 21));
+        studenti.add(new Studente1("Anna", 20));
+
+        Collections.sort(studenti, new Comparator<Studente1>() {
+            @Override
+            public int compare(Studente1 s1, Studente1 s2) {
+                return Integer.compare(s1.getEta(), s2.getEta());
+            }
+        });
+
+        for (Studente1 s : studenti) {
+            System.out.println(s);
+        }
+    } 
+	
+	//Rimuovi tutti gli studenti minori di 20 anni.
+	public static void main(String[] args) {
+        ArrayList<Studente1> studenti = new ArrayList<>();
+        studenti.add(new Studente1("Marco", 19));
+        studenti.add(new Studente1("Lucia", 22));
+        studenti.add(new Studente1("Giovanni", 21));
+        studenti.add(new Studente1("Anna", 20));
+        
+        studenti.removeIf(s -> s.getEta() < 20);
+        
+        System.out.println(studenti);
+         
+        
+	public static void main(String[] args) {
+
+        ArrayList<String> listaStudenti1 = new ArrayList<>();
+        listaStudenti1.add("Giulia");
+        listaStudenti1.add("Giulio");
+        listaStudenti1.add("Nicola");
+
+        ArrayList<String> listaStudenti2 = new ArrayList<>();
+        listaStudenti2.add("Nicole");
+        listaStudenti2.add("Katia");
+        listaStudenti2.add("Dino");
+
+        listaStudenti1.addAll(listaStudenti2);
+
+        System.out.println("Lista completa degli studenti:");
+        for (String studente : listaStudenti1) {
+            System.out.println(studente);
+        }
+    } */
+	
+	// Hashset
+	
+	/*public static void main(String[] args) {
+        HashSet<String> colori = new HashSet<>();
+
+        colori.add("Rosso");
+        colori.add("Verde");
+        colori.add("Blu");
+        colori.add("Ocra");
+        colori.add("fluo");
+
+        System.out.println("Colori presenti nell'HashSet:");
+        for (String colore : colori) {
+            System.out.println(colore);
+        }
+    } */
+	
+
+	    public static void main(String[] args) {
+	        HashSet<String> citta = new HashSet<>();
+
+	        citta.add("Roma");
+	        citta.add("Milano");
+	        citta.add("Napoli");
+
+	        System.out.println("Le città presenti nel HashSet sono:");
+	        for (String nomeCitta : citta) {
+	            System.out.println(nomeCitta);
+	        }
+	    }
+	
+	
+        
+        
+}
+
+

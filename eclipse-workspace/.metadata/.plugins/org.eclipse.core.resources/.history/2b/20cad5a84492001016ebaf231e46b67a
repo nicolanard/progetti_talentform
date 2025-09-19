@@ -1,0 +1,123 @@
+package com.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListNomi {
+
+	/*public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<String>();
+		
+		names.add("Nicola");
+		names.add("Giulia");
+		names.add("Arianna");
+		
+
+	      for (String people : names) {
+				System.out.println(people);
+			}
+		
+	}
+	
+	public static void main(String[] args) {
+			
+			ArrayList<Integer> numbers = new ArrayList<Integer>();
+			
+			numbers.add(10);
+			numbers.add(12);
+			numbers.add(6);
+			numbers.add(8);
+			
+			System.out.println("Il secondo elemento è: " + numbers.get(1));
+			
+		} 
+	
+	//Traccia:
+	//Sostituisci il primo elemento di un ArrayList di stringhe con un altro valore.
+	
+	public static void main(String[] args) {
+		
+		ArrayList<String> nomi = new ArrayList<String>();
+		
+		nomi.add("Nicola");
+		nomi.add("Giulia");
+		nomi.add("Giulio");
+		nomi.add("Nicole");
+		
+		nomi.set(2, "Alfonso");
+		
+		System.out.println("Il secondo elemento è: " + nomi.get(2));
+		
+	}
+	
+	//Traccia:
+	//Rimuovi il numero 15 da un ArrayList di interi.
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		
+		numbers.add(10);
+		numbers.add(12);
+		numbers.add(15);
+		numbers.add(8);
+		
+		numbers.remove(Integer.valueOf(15));
+		
+		System.out.println("L'array list contiene: " + numbers);
+		
+	} 
+	
+	//Stampa quanti elementi contiene un ArrayList di stringhe
+	
+	public static void main(String[] args) {
+			
+			ArrayList<String> nomi = new ArrayList<String>();
+			
+			nomi.add("Nicola");
+			nomi.add("Giulia");
+			nomi.add("Giulio");
+			nomi.add("Nicole");
+			
+			System.out.println("Il totale degli elementi contenuti nell'ArrayList è: " + nomi.size());
+			
+		} 
+	
+	//Stampa tutti i nomi in un ArrayList usando un ciclo for.
+	
+	public static void main(String[] args) {
+        ArrayList<String> nomi = new ArrayList<>();
+
+        nomi.add("Marco");
+        nomi.add("Luca");
+        nomi.add("Giulia");
+        nomi.add("Anna");
+
+        for (int i = 0; i < nomi.size(); i++) {
+            System.out.println(nomi.get(i));
+        }
+    } */
+	
+	//Verifica se un ArrayList contiene il valore "Roma". e successivamente svuota la lista
+	
+	 public static void main(String[] args) {
+	        ArrayList<String> città = new ArrayList<>();
+
+	        città.add("Foggia");
+	        città.add("Roma");
+	        città.add("Napoli");
+
+	        if (città.contains("Roma")) {
+	            System.out.println("La lista contiene 'Roma'.");
+	        } else {
+	            System.out.println("La lista non contiene 'Roma'.");
+	        }
+
+	        città.clear();
+
+	        System.out.println("La lista è stata svuotata. Numero di elementi: " + città.size());
+	    }
+		
+	
+}

@@ -1,0 +1,13 @@
+package com.oop.interfaces;
+
+public interface IArtigiano {
+	
+	int getUtileTasse();
+	   	int getUtile();
+	    int getCifraIrpef();
+	    int getCifraInps();
+	    int getUtileEccedente();
+	    int getRedditoNetto();
+
+
+}

@@ -1,0 +1,5 @@
+package com.local.classes;
+
+public interface IOperazione {
+	void calcolaProdotto(int a, int b);
+}

@@ -1,0 +1,10 @@
+package com.local.classes;
+
+public class SommaArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

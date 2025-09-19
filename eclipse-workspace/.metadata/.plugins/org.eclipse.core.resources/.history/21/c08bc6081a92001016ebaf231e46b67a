@@ -1,0 +1,32 @@
+package com.inner.classes;
+
+public class Anagrafica {
+	
+	int telefono;
+	String documentoIdentità;
+	
+	public Anagrafica(int telefono, String documentoIdentità) {
+		super();
+		this.telefono = telefono;
+		this.documentoIdentità = documentoIdentità;
+	}
+	
+	public class Utente {
+		String nome;
+		String cognome;
+		
+		public void utente() {
+			System.out.println("Telefono: " + telefono + " Documento: " + documentoIdentità + " Nome: " + nome + " Cognome: " + cognome);
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		Anagrafica a = new Anagrafica(38966433, "XD332DVF");
+		
+		
+
+	}
+
+}

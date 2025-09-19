@@ -1,0 +1,5 @@
+package com.oop.abstracts.classes;
+
+public abstract class DoctorVerdi {
+
+}

@@ -1,0 +1,12 @@
+package com.inner.classes;
+
+public class OrdineRossi {
+	private String nomeCliente;
+	private String cognomeCliente;
+	private int 
+
+	public static void main(String[] args) {
+
+	}
+
+}

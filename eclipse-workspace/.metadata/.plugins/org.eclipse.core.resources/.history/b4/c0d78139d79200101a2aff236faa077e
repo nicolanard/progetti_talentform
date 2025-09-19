@@ -1,0 +1,208 @@
+package com.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayListNomi {
+
+	/*public static void main(String[] args) {
+		
+		List<String> names = new ArrayList<String>();
+		
+		names.add("Nicola");
+		names.add("Giulia");
+		names.add("Arianna");
+		
+
+	      for (String people : names) {
+				System.out.println(people);
+			}
+		
+	}
+	
+	public static void main(String[] args) {
+			
+			ArrayList<Integer> numbers = new ArrayList<Integer>();
+			
+			numbers.add(10);
+			numbers.add(12);
+			numbers.add(6);
+			numbers.add(8);
+			
+			System.out.println("Il secondo elemento è: " + numbers.get(1));
+			
+		} 
+	
+	//Traccia:
+	//Sostituisci il primo elemento di un ArrayList di stringhe con un altro valore.
+	
+	public static void main(String[] args) {
+		
+		ArrayList<String> nomi = new ArrayList<String>();
+		
+		nomi.add("Nicola");
+		nomi.add("Giulia");
+		nomi.add("Giulio");
+		nomi.add("Nicole");
+		
+		nomi.set(2, "Alfonso");
+		
+		System.out.println("Il secondo elemento è: " + nomi.get(2));
+		
+	}
+	
+	//Traccia:
+	//Rimuovi il numero 15 da un ArrayList di interi.
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		
+		numbers.add(10);
+		numbers.add(12);
+		numbers.add(15);
+		numbers.add(8);
+		
+		numbers.remove(Integer.valueOf(15));
+		
+		System.out.println("L'array list contiene: " + numbers);
+		
+	} 
+	
+	//Stampa quanti elementi contiene un ArrayList di stringhe
+	
+	public static void main(String[] args) {
+			
+			ArrayList<String> nomi = new ArrayList<String>();
+			
+			nomi.add("Nicola");
+			nomi.add("Giulia");
+			nomi.add("Giulio");
+			nomi.add("Nicole");
+			
+			System.out.println("Il totale degli elementi contenuti nell'ArrayList è: " + nomi.size());
+			
+		} 
+	
+	//Stampa tutti i nomi in un ArrayList usando un ciclo for.
+	
+	public static void main(String[] args) {
+        ArrayList<String> nomi = new ArrayList<>();
+
+        nomi.add("Marco");
+        nomi.add("Luca");
+        nomi.add("Giulia");
+        nomi.add("Anna");
+
+        for (int i = 0; i < nomi.size(); i++) {
+            System.out.println(nomi.get(i));
+        }
+    } 
+	
+	//Verifica se un ArrayList contiene il valore "Roma". e successivamente svuota la lista
+	
+	 public static void main(String[] args) {
+	        ArrayList<String> città = new ArrayList<>();
+
+	        città.add("Foggia");
+	        città.add("Roma");
+	        città.add("Napoli");
+
+	        if (città.contains("Roma")) {
+	            System.out.println("La lista contiene 'Roma'.");
+	        } else {
+	            System.out.println("La lista non contiene 'Roma'.");
+	        }
+
+	        città.clear();
+
+	        System.out.println("La lista è stata svuotata. Numero di elementi: " + città.size());
+	    } 
+	 
+	 //Ordina un ArrayList di numeri in ordine crescente e decrescente
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> numeri = new ArrayList<>();
+		
+		numeri.add(10);
+		numeri.add(12);
+		numeri.add(3);
+		numeri.add(5);
+		numeri.add(8);
+		
+		System.out.println("Questo è l'ArrayList originale: " + numeri);
+		
+		Collections.sort(numeri);
+		System.out.println("Questo è l'ArrayList ordinato in modo crescente: " + numeri);
+		
+		Collections.sort(numeri, Collections.reverseOrder());
+		
+		System.out.println("Questo è l'ArrayList ordinato in modo decrescente: " + numeri);
+	} 
+	
+	//Stampa l’ultimo elemento della lista di stringhe senza utilizzare get
+		public static void main(String[] args) {
+	        ArrayList<String> lista = new ArrayList<>();
+	        lista.add("uno");
+	        lista.add("due");
+	        lista.add("tre");
+	
+	        String ultimo = null;
+	        for (String elemento : lista) {
+	            ultimo = elemento;
+	        }
+	
+	        if (ultimo != null) {
+	            System.out.println("Ultimo elemento: " + ultimo);
+	        } else {
+	            System.out.println("La lista è vuota.");
+	        }
+	    } 
+	
+	//Traccia:
+	//Crea un ArrayList di caratteri dalla a alla z e crea un ordine decrescente e determina la lunghezza della lista e verifica se la lista e vuota
+		
+		public static void main(String[] args) {
+	        ArrayList<Character> alfabeto = new ArrayList<>();
+
+	        for (char c = 'a'; c <= 'z'; c++) {
+	            alfabeto.add(c);
+	        }
+
+	        alfabeto.sort(Collections.reverseOrder());
+
+	        int lunghezza = alfabeto.size();
+	        System.out.println("Lunghezza della lista: " + lunghezza);
+
+	        boolean eVuota = alfabeto.isEmpty();
+	        System.out.println("La lista è vuota? " + eVuota);
+
+	        System.out.println("Lista in ordine decrescente: " + alfabeto);
+	    } 
+	
+	//Traccia:
+	//Calcola la somma degli interi in un ArrayList e copia tutti gli elementi da una lista ad un altra
+	public static void main(String[] args) {
+
+        ArrayList<Integer> listaOriginale = new ArrayList<>();
+        listaOriginale.add(10);
+        listaOriginale.add(20);
+        listaOriginale.add(30);
+        listaOriginale.add(40);
+
+        int somma = 0;
+        for (int numero : listaOriginale) {
+            somma += numero;
+        }
+        System.out.println("Somma degli interi: " + somma);
+
+        ArrayList<Integer> listaCopia = new ArrayList<>();
+        listaCopia.addAll(listaOriginale);
+
+        System.out.println("Lista copiata: " + listaCopia);
+    }*/
+	
+	//
+	
+}

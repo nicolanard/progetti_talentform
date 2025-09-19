@@ -1,0 +1,66 @@
+package com.oop.classes.intro;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class Esercizi{
+	
+	public class Studente1 {
+	    private String nome;
+	    private int eta;
+
+	    public Studente1(String nome, int eta) {
+	        this.nome = nome;
+	        this.eta = eta;
+	    }
+
+	    public int getEta() {
+	        return eta;
+	    }
+
+	    public String getNome() {
+	        return nome;
+	    }
+	}
+    /*public static void main(String[] args) {
+        ArrayList<Studente1> studenti = new ArrayList<>();
+        studenti.add(new Studente1("Marco", 19));
+        studenti.add(new Studente1("Lucia", 22));
+        studenti.add(new Studente1("Giovanni", 21));
+        studenti.add(new Studente1("Anna", 20));
+
+        Collections.sort(studenti, new Comparator<Studente1>() {
+            @Override
+            public int compare(Studente1 s1, Studente1 s2) {
+                return Integer.compare(s1.getEta(), s2.getEta());
+            }
+        });
+
+        for (Studente1 s : studenti) {
+            System.out.println(s);
+        }
+    } */
+	
+	//Rimuovi tutti gli studenti minori di 20 anni.
+	public static void main(String[] args) {
+        ArrayList<Studente1> studenti = new ArrayList<>();
+        studenti.add(new Studente1("Marco", 19));
+        studenti.add(new Studente1("Lucia", 22));
+        studenti.add(new Studente1("Giovanni", 21));
+        studenti.add(new Studente1("Anna", 20));
+        
+        Iterator<Studente1> stud = studenti.iterator();
+        
+        while(stud.hasNext()) {
+        	Studente1 s = stud.next();
+        	for(s.eta < 20) {
+        		stud.remove();
+        	}
+        }
+        
+        
+    }
+}
+

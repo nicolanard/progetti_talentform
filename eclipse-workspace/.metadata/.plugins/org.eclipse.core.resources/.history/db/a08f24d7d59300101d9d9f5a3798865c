@@ -1,0 +1,634 @@
+package com.collections;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class EserciziHashMap {
+	
+	// Stampa l’età di "Anna" dal HashMap.
+/*
+	public static void main(String[] args) {
+
+        HashMap<String, Integer> etaPersone = new HashMap<>();
+
+        etaPersone.put("Nicola", 24);
+        etaPersone.put("Anna", 25);
+        etaPersone.put("Giulia", 20);
+        
+        System.out.println(etaPersone.get("Anna");
+
+        if (etaPersone.containsKey("Anna")) {
+            int etaAnna = etaPersone.get("Anna");
+            System.out.println("L'età di Anna è: " + etaAnna);
+        } else {
+            System.out.println("Anna non è presente nella mappa.");
+        }
+    } 
+	
+	//Rimuovi "Luca" dal dizionario.
+	public static void main(String[] args) {
+        HashMap<String, Integer> etaPersone = new HashMap<>();
+
+        etaPersone.put("Luca", 30);
+        etaPersone.put("Anna", 25);
+        etaPersone.put("Marco", 40);
+
+        etaPersone.remove("Luca");
+
+        System.out.println("Contenuto dopo la rimozione di Luca:");
+        for (String nome : etaPersone.keySet()) {
+            System.out.println(nome + ": " + etaPersone.get(nome));
+        }
+    } 
+	
+	//Verifica se una chiave esiste
+	public static void main(String[] args) {
+        HashMap<String, Integer> etaPersone = new HashMap<>();
+
+        etaPersone.put("Luca", 30);
+        etaPersone.put("Anna", 25);
+        etaPersone.put("Marco", 40);
+
+        if (etaPersone.containsKey("Marco")) {
+            System.out.println("La chiave 'Marco' esiste nella mappa.");
+        } else {
+            System.out.println("La chiave 'Marco' non esiste nella mappa.");
+        }
+    } 
+	
+	//Controlla se c’è qualcuno con età 30.
+	public static void main(String[] args) {
+        HashMap<String, Integer> etaPersone = new HashMap<>();
+
+        etaPersone.put("Luca", 30);
+        etaPersone.put("Anna", 25);
+        etaPersone.put("Marco", 40);
+
+        if (etaPersone.containsValue(30)) {
+            System.out.println("C'è almeno una persona con 30 anni.");
+        } else {
+            System.out.println("Nessuno ha 30 anni.");
+        }
+    } 
+	
+	//Stampa tutte le chiavi del HashMap.
+	public static void main(String[] args) {
+		HashMap<String, Integer> etaPersone = new HashMap<>();
+		
+		etaPersone.put("Luca", 30);
+		etaPersone.put("Anna", 25);
+		etaPersone.put("Marco", 40);
+		
+		for(String chiave : etaPersone.keySet()) {
+			System.out.println(chiave);
+		}
+		
+		//Stampa tutti i valori del HashMap
+		for(Integer valore : etaPersone.values()){
+		System.out.println(valore);
+		}
+		
+		// Stampa del numero di elementi nella HashMap
+        System.out.println("Numero di elementi nella HashMap: " + etaPersone.size());
+        
+        // Svuotare la mappa
+        mappa.clear();
+
+        // Verifica se la mappa è vuota
+        if (mappa.isEmpty()) {
+            System.out.println("La mappa è vuota.");
+        } else {
+            System.out.println("La mappa NON è vuota.");
+        }
+        
+	} 
+	
+	//
+	public static void main(String[] args) {
+    HashMap<Integer, Integer> mappa = new HashMap<>();
+
+    // Inserimento delle coppie chiave-valore (chiave: numero, valore: quadrato)
+    for (int i = 1; i <= 5; i++) {
+        mappa.put(i, i * i);
+    }
+
+    // Stampa della mappa
+    System.out.println("Contenuto della mappa (numero -> quadrato):");
+    for (Integer chiave : mappa.keySet()) {
+        System.out.println(chiave + " -> " + mappa.get(chiave));
+    }
+} 
+	
+	//Trova la persona con l’età massima.
+	//Trova la chiave con valore massimo
+	
+	public static void main(String[] args) {
+		HashMap<String, Integer> persone = new HashMap<>();
+		
+		persone.put("Luca", 30);
+		persone.put("Anna", 25);
+		persone.put("Marco", 40);
+		
+		String personaMax = null;
+		int etàMax = -1;
+		
+		for(String chiave : persone.keySet()) {
+			if(persone.get(chiave) > etàMax) {
+				etàMax = persone.get(chiave);
+				personaMax = chiave;
+			}
+		}
+		
+		System.out.println("L'età massima tra le varie persone e': " + etàMax + " di " + personaMax);
+		
+	} 
+	
+	//: Verifica presenza e aggiungi
+	//	Aggiungi "Sara" solo se non è già presente.
+	public static void main(String[] args) {
+        HashMap<String, Integer> mappa = new HashMap<>();
+        mappa.put("Luca", 25);
+        mappa.put("Giulia", 30);
+
+        if (!mappa.containsKey("Sara")) {
+            mappa.put("Sara", 28);  // Aggiungi Sara con valore a scelta
+        }
+
+        System.out.println(mappa);
+    }
+	
+	//Conta le occorrenze di parole in una frase
+	
+	public static void main(String[] args) {
+		String frase = "Esempio di esempio frase di prova frase";
+	    
+	    HashMap<String, Integer> conteggio = new HashMap<>();
+	    
+	    for (String i : frase.split(" ") ) {
+	        conteggio.put(i, conteggio.getOrDefault(i, 0)+1);
+	        
+	    }
+	    
+	    System.out.println(conteggio);
+	} 
+	
+	//
+	public static void main(String[] args) {
+		HashMap<String, Integer> original = new HashMap<>(Map.of("Marco", 18, "Martina", 16, "Massimo", 24));
+
+	    HashMap<Integer, String> inverted = new HashMap<>();
+	    
+	    for(Map.Entry<String,Integer> i  : original.entrySet()) {
+	        inverted.put(i.getValue(), i.getKey());
+	    }
+	    System.out.println(inverted);
+	} 
+	
+	//Trova la chiave con valore massimo
+	public static void main(String[] args) {
+		HashMap<String, Integer> mappa = new HashMap<>(Map.of("A", 10, "B", 6, "C", 9));
+        
+        String maxKey = Collections.max(mappa.entrySet(),Map.Entry.comparingByValue()).getKey(); //trovare chiave massima mettendo a confronto i valori(Collections/Map)
+        
+        System.out.println("Ecco la chiave con valore massimo: " + maxKey);
+        
+        System.out.println("");
+        
+        String minKey = Collections.min(mappa.entrySet(),Map.Entry.comparingByValue()).getKey(); //trovare chiave minima mettendo a confronto i valori(Collections/Map)
+        
+        System.out.println("Ecco la chiave con valore minimo: " + minKey);
+	} 
+	
+	//Unisci due mappe sommando i valori
+	public static void main(String[] args) {
+		HashMap<String, Integer> mappa1 = new HashMap<>();
+		
+		mappa1.put("A", 10);
+		mappa1.put("B", 8);
+		
+		HashMap<String, Integer> mappa2 = new HashMap<>();
+		
+		mappa2.put("C", 6);
+		mappa2.put("D", 4);
+		mappa2.put("F", 1);
+		
+		HashMap<String, Integer> mappa3 = new HashMap<>(mappa1);
+		
+		for(Map.Entry<String, Integer> entry : mappa2.entrySet()) {
+			mappa3.merge(entry.getKey(), entry.getValue(), Integer::sum);
+		}
+		
+		System.out.println("La nuova mappa, mostra i seguenti valori: " + mappa3);
+			
+	} 
+	
+	//Rimuovi le entry con valori inferiori a una soglia  
+	public static void main(String[] args) {
+		int soglia = 20;                                                      
+		HashMap<Integer, Integer> map = new HashMap<>(Map.of(1,10,2,20,3,30));
+		map.values().removeIf(x -> x < soglia);                               
+		System.out.println("mappa con soglia" + map);
+	} 
+	
+	//Ordina la mappa per chiave
+	public static void main(String[] args) {                                                    
+		HashMap<String, Integer> map = new HashMap<>(Map.of("A",10,"B",8,"C",6));
+		
+		TreeMap<String, Integer> ordinata = new TreeMap<>(map);
+		
+		System.out.println(ordinata);
+	}  
+	
+	//Ordina la mappa per valore
+	public static void main(String[] args) {                                                    
+		HashMap<String, Integer> map = new HashMap<>(Map.of("B", 7, "A", 5, "C", 6));
+        TreeMap<String, Integer> map2 = new TreeMap<>(map);
+        System.out.println("mappa" + map2);
+
+        List<Map.Entry<String, Integer>> map3 = new ArrayList<>(map.entrySet());
+        map3.sort(Map.Entry.comparingByValue());
+        System.out.println("Mappa ordinata: " + map3);
+		
+		
+	} 
+	
+	public static void main(String[] args) {
+        //Crea una mappa da due liste
+        List<Integer> n = new ArrayList<>(List.of(1,2,3));
+        List<String> c = new ArrayList<>(List.of("a","b","c"));
+        HashMap<Integer, String> nc = new HashMap<>();
+        for (int i = 0; i < n.size(); i++) {
+            nc.put(n.get(i), c.get(i));
+            }
+        System.out.println(nc);
+    } 
+	
+	// Trova tutte le chiavi con un certo valore
+	
+	//Conta le frequenze di caratteri in una stringa
+	public static void main(String[] args) {
+        String frutta = "banana";
+
+        Map<Character, Integer> frequenze = new HashMap<>();
+
+        for (char c : frutta.toCharArray()) {
+            frequenze.put(c, frequenze.getOrDefault(c, 0) + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry : frequenze.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    } 
+	
+	//Rimuovi le chiavi se soddisfano una condizione
+	public static void main(String[] args) {
+		HashMap<Integer,String> map = new HashMap<>();                                         
+		map.put(1, "aaaaa");                                                                   
+		map.put(2, "bbbb");                                                                    
+		map.put(3, "ccccccccccccccccccccccccc");                                               
+		map.put(4, "dd");                                                                      
+		                                                                                       
+		int chiaviConStringaPiùLunga = 0;                                                      
+		for (Map.Entry<Integer, String> entry:map.entrySet()) {                                
+		    int chiave_attuale = entry.getKey();                                               
+		    String valore_attuale = entry.getValue();                                          
+		                                                                                       
+		    if (chiaviConStringaPiùLunga == 0) {                                               
+		        chiaviConStringaPiùLunga = chiave_attuale;                                     
+		    } else {                                                                           
+		        if (valore_attuale.length() > map.get(chiaviConStringaPiùLunga).length()) {    
+		            chiaviConStringaPiùLunga = chiave_attuale;                                 
+		        }                                                                              
+		    }                                                                                  
+		}                                                                                      
+		System.out.println("la chiave con la stringa più lunga è " + chiaviConStringaPiùLunga);
+		
+	} 
+	
+	// Sostituisci tutti i valori con il loro quadrato
+	public static void main(String[] args) {
+		HashMap<String, Integer> mappa = new HashMap<>(Map.of("A", 7, "B", 5, "C", 6));
+		
+		mappa.replaceAll((k, v) -> v * v);
+		
+		System.out.println("I valori al quadrato dentro l'HashMap ora sono: " + mappa);
+	} 
+	
+	// Incrementa un valore solo se la chiave esiste
+	public static void main(String[] args) {
+		HashMap<String,Integer> contatori = new HashMap<>(Map.of("a",5,"b",2));
+		contatori.computeIfPresent("a",(k,v)->v+1);
+		System.out.println(contatori);
+	} 
+	
+	// Converti HashMap in una lista di stringhe chiave=valore
+	public static void main(String[] args) {
+		HashMap<Integer, String> map = new HashMap<>(Map.of(1,"a",2,"b",3,"c"));
+		List<String> lista = new ArrayList<>(map.values());                     
+		System.out.println(lista);
+	} 
+
+//	Stampa tutti gli elementi di una lista utilizzando Iterator
+	public static void main(String[] args) {
+		List<String> persona = Arrays.asList("Paolo", "Giovanni", "Luca");
+		  
+		Iterator<String> ti = persona.iterator();
+		  
+		  while ( ti.hasNext()) {
+		      
+		      System.out.println(ti.next());
+			
+			
+		  }
+	}
+	
+	//Conta il numero di elementi integer
+	 public static void main(String[] args) {
+	        // Lista con tipi misti
+	        List<Object> elementi = Arrays.asList("Paolo", 10, 3.14, 25, "Luca", 42, true, 'A');
+
+	        int count = 0;
+
+	        Iterator<Object> it = elementi.iterator();
+
+	        while (it.hasNext()) {
+	            Object corrente = it.next();
+	            if (corrente instanceof Integer) {
+	                count++;
+	            }
+	        }
+
+	        System.out.println("Numero di Integer nella lista: " + count);
+	    } 
+	
+	//
+	public static void main(String[] args) {
+        List<Object> elementi = Arrays.asList("Mario", 15, 3.5, 7, "Anna", 28, false, 10);
+
+        int somma = 0;
+
+        Iterator<Object> it = elementi.iterator();
+
+        while (it.hasNext()) {
+            Object corrente = it.next();
+            if (corrente instanceof Integer) {
+                somma += (Integer) corrente;
+            }
+        }
+
+        System.out.println("Somma degli elementi Integer: " + somma);
+    } 
+	
+	//Trova il numero massimo con Iterator
+	
+	public static void main(String[] args) {
+		List<Integer> numeri = Arrays.asList(1,2,3,4,5);
+		
+		Iterator<Integer> it = numeri.iterator();
+		
+		if(!it.hasNext()) {
+			System.out.println("Array vuoto");
+		}
+		
+		int max = it.next();
+		
+		while(it.hasNext()) {
+			int n = it.next();
+			if(n > max) {
+				max = n;
+			}
+		}
+		System.out.println("Il valore max e': " + max);
+	} 
+	
+	//Trova il numero minimo utilizzando iterator
+	public static void main(String[] args) {
+		List<Integer> numeri = Arrays.asList(1,2,3,4,5);
+		
+		Iterator<Integer> it = numeri.iterator();
+		
+		if(!it.hasNext()) {
+			System.out.println("Array vuoto");
+		}
+		
+		int min = it.next();
+		
+		while(it.hasNext()) {
+			int n = it.next();
+			if(n < min) {
+				min = n;
+			}
+		}
+		System.out.println("Il valore min e': " + min);
+	}  
+	
+	//Verifica se un elemento è presente
+	public static void main(String[] args) {
+        List<String> colors = new ArrayList<>(Arrays.asList("blue","red","green"));
+        Iterator<String> it = colors.iterator();
+        boolean isIn = false;
+        while (it.hasNext()) {
+            if (it.next().equals("blue")) {
+                isIn = true;
+                break;
+            }
+        }
+        System.out.println("E' presente: " + isIn);
+	} 
+	
+	//Copia tutti gli elementi in una nuova lista
+	public static void main(String[] args) {
+	List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+        
+        List<Integer> copiaNumeri = new ArrayList<>();
+        
+        Iterator<Integer> it = numeri.iterator();
+        
+        if(!it.hasNext()) {
+            
+            System.out.println("La lista è vuota");
+        }
+        
+        while(it.hasNext()) {
+            
+            copiaNumeri.add(it.next());
+        }
+        
+        System.out.println(copiaNumeri);
+	} 
+	
+	//Concatena tutte le stringhe in una frase
+	
+	public static void main(String[] args) {
+	        ArrayList<String> parole = new ArrayList<>();
+	        parole.add("Ciao");
+	        parole.add("sono");
+	        parole.add("Nicola");
+	        parole.add("Narducci");
+
+	        Iterator<String> iterator = parole.iterator();
+
+	        StringBuilder frase = new StringBuilder();
+
+	        while (iterator.hasNext()) {
+	            frase.append(iterator.next());
+	            if (iterator.hasNext()) {
+	                frase.append(" ");
+	            }
+	        }
+
+	        System.out.println(frase.toString());
+	} 
+	
+	// Moltiplica ogni numero per 2 e salva in nuova lista
+	public static void main(String[] args) {
+        ArrayList<Integer> numeri = new ArrayList<>();
+        numeri.add(1);
+        numeri.add(2);
+        numeri.add(3);
+        numeri.add(4);
+        numeri.add(5);
+
+        ArrayList<Integer> moltiplicati = new ArrayList<>();
+
+        Iterator<Integer> iterator = numeri.iterator();
+
+        while (iterator.hasNext()) {
+            int numero = iterator.next();
+            moltiplicati.add(numero * 2);
+        }
+
+        System.out.println("Lista originale: " + numeri);
+        System.out.println("Lista moltiplicata per 2: " + moltiplicati);
+    } 
+	
+	// Rimuovi tutti gli elementi minori di 10 da un set
+	public static void main(String[] args) {
+        Set<Integer> numeri = new HashSet<>(Arrays.asList(5, 12, 8, 20, 3, 15));
+
+        Iterator<Integer> iterator = numeri.iterator();
+
+        while (iterator.hasNext()) {
+            int numero = iterator.next();
+            if (numero < 10) {
+                iterator.remove(); 
+            }
+        }
+
+        System.out.println("Set dopo la rimozione degli elementi < 10: " + numeri);
+    } 
+	
+	// // Conta quante parole iniziano con "a"
+	public static void main(String[] args) {
+	    Set<String> parole = new HashSet<>(Arrays.asList("Scarpa", "Cavallo", "Astuccio", "Botte", "Ancora"));
+	    Iterator<String> str = parole.iterator();
+	    int count = 0;
+	    while (str.hasNext()) {
+
+	        if (str.next().startsWith("A")) {
+	            count++;
+	        }
+	    }
+	    System.out.println(count + " Parole che iniziano con a");
+	} 
+	
+	// Scorri una lista con Iterator e stampa solo i numeri pari
+	public static void main(String[] args) {
+        // 1. Lista di numeri creata in un'unica istruzione
+        List<Integer> numeri = new ArrayList<>(Arrays.asList(3, 6, 9, 12, 15, 18));
+
+        // 2. Iterator per scorrere la lista
+        Iterator<Integer> iterator = numeri.iterator();
+
+        System.out.println("Numeri pari nella lista:");
+
+        // 3. Scorri la lista e stampa solo i numeri pari
+        while (iterator.hasNext()) {
+            int numero = iterator.next();
+            if (numero % 2 == 0) {
+                System.out.println(numero);
+            }
+        }
+    } 
+
+	// Stampa chiavi e valori di una mappa
+	public static void main(String[] args) {
+
+        Map<String, Integer> eta = new HashMap<>();
+        eta.put("Anna", 25);
+        eta.put("Marco", 30);
+        eta.put("Luca", 22);
+
+        Iterator<Map.Entry<String, Integer>> iterator = eta.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            Map.Entry<String, Integer> entry = iterator.next();
+            String chiave = entry.getKey();
+            Integer valore = entry.getValue();
+
+            System.out.println("Chiave: " + chiave + ", Valore: " + valore);
+        }
+    } 
+	
+	// Trova una chiave specifica in una mappa
+	public static void main(String[] args) {
+        Map<String, Integer> eta = new HashMap<>();
+        eta.put("Anna", 25);
+        eta.put("Marco", 30);
+        eta.put("Luca", 22);
+
+        String chiaveDaCercare = "Marco";
+        boolean trovata = false;
+
+        Iterator<Map.Entry<String, Integer>> iterator = eta.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            Map.Entry<String, Integer> entry = iterator.next();
+            if (entry.getKey().equals(chiaveDaCercare)) {
+                System.out.println("Chiave trovata: " + entry.getKey() + ", Valore: " + entry.getValue());
+                trovata = true;
+                break;
+            }
+        }
+
+        if (!trovata) {
+            System.out.println("Chiave '" + chiaveDaCercare + "' non trovata nella mappa.");
+        }
+    } */
+	
+	// Rimuovi tutte le entry con valore sotto 50
+	
+	public static void main(String[] args) {
+		Map<String, Integer> voti = new HashMap<>();
+		voti.put("A", 100);
+		voti.put("B", 80);
+		voti.put("C", 60);
+		voti.put("D", 40);
+		voti.put("F", 10);
+		
+		System.out.println("I voti iniziali all'interno del Map sono: " + voti);
+		
+		Iterator<Map.Entry<String, Integer>> it = voti.entrySet().iterator();
+		
+		while(it.hasNext()) {
+			Map.Entry<String, Integer> entry = it.next();
+			if(entry.getValue() < 50) {
+				it.remove();
+			}
+		}
+		
+		System.out.println("I voti attuali all'interno del Map sono: " + voti);
+		
+	}
+	
+	
+	
+}

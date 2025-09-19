@@ -1,0 +1,512 @@
+package com.lambda.expression;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.*;
+import java.util.Optional;
+import java.util.Random;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import com.array.Array;
+
+public class MainLambda {
+
+	/*public static void main(String[] args) {
+		List <String> names = List.of("Katia", "Nicola", "Giulia");
+		names.forEach(n -> System.out.println(n));
+
+	}
+	
+	//Somma di due numeri con BiFunction
+	public static void main(String[] args) {
+		BiFunction<Integer, Integer, Integer> somma = (a, b) -> a + b;
+		
+		System.out.println("La somma e': " + somma.apply(15, 25));
+	} 
+	
+	// Verifica se un numero è pari con Predicate
+	public static void main(String[] args) {
+        Predicate<Integer> isEven = n -> n % 2 == 0;
+
+        int numero1 = 10;
+        int numero2 = 7;
+
+        System.out.println(numero1 + " è pari? " + isEven.test(numero1)); // true
+        System.out.println(numero2 + " è pari? " + isEven.test(numero2)); // false
+    } 
+	
+	// Convertire stringhe in maiuscolo con Function
+	public static void main(String[] args) {
+        // Function che converte una stringa in maiuscolo
+        Function<String, String> toUpperCase = s -> s.toUpperCase();
+
+        String input1 = "ciao";
+        String input2 = "lambda expression";
+
+        System.out.println("Originale: " + input1 + " -> Maiuscolo: " + toUpperCase.apply(input1));
+        System.out.println("Originale: " + input2 + " -> Maiuscolo: " + toUpperCase.apply(input2));
+    }
+	
+	// Stampare messaggio usando Consumer
+	public static void main(String[] args) {
+        Consumer<String> stampa = messaggio -> System.out.println(messaggio);
+
+        stampa.accept("Ciao, mondo!");
+        stampa.accept("Usare Consumer è semplice!");
+    }
+	
+	//Fornire valori con Supplier
+	public static void main(String[] args) {
+        // Supplier che fornisce un messaggio
+        Supplier<String> fornisciMessaggio = () -> "Benvenuto con Supplier!";
+
+        // Uso di get() per ottenere il valore
+        System.out.println(fornisciMessaggio.get());
+    }
+	
+	//Filtrare lista con stream e lambda
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        List<Integer> pari = numeri.stream()
+                                   .filter(n -> n % 2 == 0) // lambda che tiene solo i pari
+                                   .collect(Collectors.toList());
+
+        System.out.println("Numeri pari: " + pari);
+    } 
+	
+	//Incrementare valori in una lista con map
+	    public static void main(String[] args) {
+	        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+
+	        List<Integer> incrementati = numeri.stream()
+	                                           .map(n -> n + 1) // lambda che incrementa ogni numero di 1
+	                                           .collect(Collectors.toList());
+
+	        System.out.println("Numeri originali: " + numeri);
+	        System.out.println("Numeri incrementati: " + incrementati);
+	    } 
+	
+	// Ordinare lista di stringhe con lambda
+		public static void main(String[] args) {
+			List<String> nomi = new ArrayList<>(Arrays.asList("Nicola", "Giulia", "Andrea"));
+			
+			nomi.sort((a, b) -> a.compareTo(b));
+			
+			System.out.println("Ordinamento dalla A alla Z: " + nomi);
+		} 
+	
+	//Moltiplicare tutti gli elementi con map
+		public static void main(String[] args) {
+			List<Integer> numeri = Arrays.asList(1, 2, 3, 4);
+			
+			List<Integer> numeriMoltiplicati = numeri.stream().map(n -> n * 2).toList();
+			
+			System.out.println("I numeri di partenza sono: " + numeri);
+			System.out.println("I numeri moltiplicati sono: " + numeriMoltiplicati);
+		}
+	
+	// Filtrare parole lunghe
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("cane", "elefante", "gatto", "ippopotamo");
+        int lunghezzaMinima = 5;
+
+        List<String> paroleLunghe = parole.stream()
+            .filter(parola -> parola.length() > lunghezzaMinima) // Lambda
+            .collect(Collectors.toList());
+
+        System.out.println("Parole più lunghe di " + lunghezzaMinima + " caratteri: " + paroleLunghe);
+    } 
+	
+	//Usare BiConsumer per stampare chiave e valore
+	public static void main(String[] args) {
+        Map<String, Integer> mappa = new HashMap<>();
+        mappa.put("Mario", 25);
+        mappa.put("Luca", 30);
+        mappa.put("Anna", 22);
+
+        BiConsumer<String, Integer> stampaCoppia = (chiave, valore) -> System.out.println("Chiave: " + chiave + ", Valore: " + valore);
+        mappa.forEach(stampaCoppia);
+    } 
+	
+	// Contare elementi con filter
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5, 6, 8, 10);
+
+        long pari = numeri.stream()
+            .filter(n -> n % 2 == 0)
+            .count();
+
+        System.out.println("Numeri pari: " + pari);
+    } 
+	
+	// Somma di numeri con reduce
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+
+        int somma = numeri.stream()
+            .reduce(0, (a, b) -> a + b); 
+
+        System.out.println("Somma: " + somma);
+    }
+	
+	//Trova il massimo con una lambda
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(10, 45, 3, 99, 27);
+
+        Optional<Integer> massimo = numeri.stream().max((a, b) -> a - b);
+
+        massimo.ifPresent(m -> System.out.println("Valore massimo: " + m));
+    } 
+
+	//Verificare se almeno un elemento soddisfa condizione
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(10, 25, 150, 30);
+
+        boolean esiste = numeri.stream()
+            .anyMatch(n -> n > 100);
+
+        System.out.println("Almeno un numero > 100? " + esiste);
+    } 
+	
+	//Creare un Supplier di valori casuali
+	 public static void main(String[] args) {
+	        Random random = new Random();
+
+	        Supplier<Integer> numeroCasuale = () -> random.nextInt(100); // da 0 a 99
+
+	        System.out.println("Numero casuale: " + numeroCasuale.get());
+	        System.out.println("Altro numero casuale: " + numeroCasuale.get());
+	    } 
+	
+	// Concatenare stringhe con reduce
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("Java", "è", "potente");
+
+        String frase = parole.stream()
+            .reduce("", (a, b) -> a + " " + b).trim();
+
+        System.out.println("Frase: " + frase);
+    }
+	
+	// Filtrare numeri dispari e sommarli
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+
+        int sommaDispari = numeri.stream()
+            .filter(n -> n % 2 != 0)     
+            .reduce(0, Integer::sum);        
+
+        System.out.println("Somma dei numeri dispari: " + sommaDispari);
+    } 
+	
+	// Ottenere lista di stringhe maiuscole
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("java", "stream", "lambda");
+
+        List<String> paroleMaiuscole = parole.stream()
+            .map(String::toUpperCase)              
+            .collect(Collectors.toList()); 
+
+        System.out.println("Parole in maiuscolo: " + paroleMaiuscole);
+    } 
+	
+	// Filtrare parole lunghe e ordinarle
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("cane", "elefante", "gatto", "ippopotamo", "sole", "albero");
+
+        List<String> risultato = parole.stream()
+            .filter(p -> p.length() > 5)   
+            .sorted()                           
+            .collect(Collectors.toList());     
+
+        System.out.println("Parole lunghe ordinate: " + risultato);
+    } 
+	
+	// Contare numeri maggiori di 10
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(5, 12, 8, 20, 3, 15);
+
+        long conteggio = numeri.stream()
+            .filter(n -> n > 10) 
+            .count();              
+
+        System.out.println("Numeri maggiori di 10: " + conteggio);
+    } 
+	
+	// Rimuovi i duplicati e ordinali
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(5, 3, 10, 5, 3, 1, 7);
+
+        List<Integer> risultato = numeri.stream()
+            .distinct()               
+            .sorted()                 
+            .collect(Collectors.toList());
+
+        System.out.println("Numeri unici ordinati: " + risultato);
+    } 
+	
+	//Creare mappa parola -> lunghezza
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("java", "stream", "lambda");
+
+        Map<String, Integer> mappa = parole.stream()
+            .collect(Collectors.toMap(
+                parola -> parola,            
+                parola -> parola.length()     
+            ));
+
+        System.out.println("Mappa parola -> lunghezza: " + mappa);
+    } 
+	
+	// Concatenare parole usando reduce
+	 public static void main(String[] args) {
+	        List<String> parole = Arrays.asList("Nicola", "Narducci", "Developer");
+
+	        String frase = parole.stream()
+	            .reduce("", (a, b) -> a + " " + b) 
+	            .trim();
+
+	        System.out.println("Frase concatenata: " + frase);
+	    } 
+	
+	// Filtrare numeri pari e moltiplicarli per 2
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+        List<Integer> risultato = numeri.stream()
+            .filter(n -> n % 2 == 0)      
+            .map(n -> n * 2)               
+            .collect(Collectors.toList()); 
+
+        System.out.println("Numeri pari moltiplicati per 2: " + risultato);
+    } 
+	
+	// Ordinare lista di stringhe per lunghezza
+	public static void main(String[] args) {
+		List<String> parole = new ArrayList<>(Arrays.asList("Nicola", "Narducci"));
+		
+		parole.sort((a, b) -> Integer.compare(a.length(), b.length()));
+		
+		System.out.println("Ordine per lunghezza: " + parole);
+	} 
+	
+	// 2 METODO
+	List<String> words = new ArrayList<>(List.of("apple","cat","banana","dog"));
+    words.sort((a,b) -> a.length() - b.length());
+    System.out.println(words); // [cat, dog, apple, banana]
+	
+	// Trovare la parola più lunga
+	public static void main(String[] args) {
+		List<String> parole = new ArrayList<>(Arrays.asList("Nicola", "Narducci"));
+		
+		String max = parole.stream().max((a,b) -> Integer.compare(a.length(), b.length())).orElse(null);
+		
+		System.out.println("La parola più lunga e': " + max);
+		
+	} 
+	
+	// 2 METODO
+	List<String> words = List.of("Java","Stream","Lambda");
+    String longest = words.stream().max((a,b) -> a.length() - b.length()).get();
+    System.out.println(longest);
+	
+	//Verificare se tutti i numeri sono positivi
+	public static void main(String[] args) {
+		List<Integer> numeri =Arrays.asList(1, -5, 9, 10);
+		
+		boolean numeriPositivi = numeri.stream().allMatch(n -> n > 0);
+		
+		System.out.println("I numeri sono tutti positivi? " + numeriPositivi);
+	} 
+	
+	// Verificare se almeno un numero è multiplo di 5
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(3, 7, 10, 14, 22);
+
+        boolean almenoUnoMultiploDi5 = numeri.stream()
+                                             .anyMatch(n -> n % 5 == 0);
+
+        if (almenoUnoMultiploDi5) {
+            System.out.println("Almeno un numero è multiplo di 5.");
+        } else {
+            System.out.println("Nessun numero è multiplo di 5.");
+        }
+    } 
+	
+	// Stampare tutti i numeri con forEach e lambda
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(3, 7, 10, 14, 22);
+
+        numeri.forEach(n -> System.out.println(n));
+    } 
+	
+	// Trovare la somma usando reduce
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(3, 7, 10, 14, 22);
+
+        int somma = numeri.stream()
+                          .reduce(0, (a, b) -> a + b);
+
+        System.out.println("La somma è: " + somma);
+    }
+	
+	// Filtrare stringhe che contengono "a"
+	 public static void main(String[] args) {
+	        List<String> parole = Arrays.asList("cane", "gatto", "sole", "luna", "mare");
+
+	        List<String> conA = parole.stream()
+	                                  .filter(s -> s.contains("a"))
+	                                  .collect(Collectors.toList());
+
+	        System.out.println("Stringhe che contengono 'a': " + conA);
+	    } 
+	
+	// Convertire lista di numeri in lista di stringhe
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+
+        List<String> stringhe = numeri.stream()
+                                      .map(n -> String.valueOf(n)) // oppure: n -> n.toString()
+                                      .collect(Collectors.toList());
+
+        System.out.println("Lista di stringhe: " + stringhe);
+    } 
+	
+	//
+	public static void main(String[] args) {
+        Map<String, Integer> mappa = new HashMap<>();
+        mappa.put("banana", 4);
+        mappa.put("mela", 2);
+        mappa.put("arancia", 5);
+        mappa.put("kiwi", 1);
+
+        Map<String, Integer> ordinata = mappa.entrySet()
+            .stream()
+            .sorted(Map.Entry.comparingByValue()) 
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1, e2) -> e1,
+                LinkedHashMap::new
+            ));
+
+        System.out.println("Mappa ordinata per valore: " + ordinata);
+    } 
+	
+	// Ottenere lista di quadrati dei numeri
+	public static void main(String[] args) {
+        List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5);
+
+        List<Integer> quadrati = numeri.stream()
+                                       .map(n -> n * n)
+                                       .collect(Collectors.toList());
+
+        System.out.println("Lista dei quadrati: " + quadrati);
+    } 
+	
+	// Raggruppare parole per lunghezza
+	public static void main(String[] args) {
+        List<String> parole = Arrays.asList("cane", "gatto", "sole", "luna", "albero", "mare", "no");
+
+        Map<Integer, List<String>> raggruppate = parole.stream()
+            .collect(Collectors.groupingBy(String::length));
+
+        System.out.println("Parole raggruppate per lunghezza: " + raggruppate);
+    } 
+	
+	//Verifica se una password contiene almeno una maiuscola, una minuscola, un numero e almeno 8 caratteri.
+	public static void main(String[] args) {
+        String password = "Test1234";
+
+        boolean valida = password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$");
+
+        if (valida) {
+            System.out.println("Password valida.");
+        } else {
+            System.out.println("Password NON valida.");
+        }
+    } 
+	
+	// Estrai tutti gli indirizzi email da un testo.
+	public static void main(String[] args) {
+		String testo = "Contatti: a@b.com, info@site.it";
+		
+		Matcher matcher = Pattern.compile("[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,6}").matcher(testo);
+		
+		while(matcher.find()) {
+			System.out.println(matcher.group());
+		}
+		
+	} 
+	
+	// Verifica se una stringa è un CAP italiano valido (5 cifre).
+	public static void main(String[] args) {
+        String[] testCAP = {"00100", "12345", "ABCDE", "1234", "123456", "12 345"};
+
+        for (String cap : testCAP) {
+            if (cap.matches("^\\d{5}$")) {
+                System.out.println("CAP: " + cap + " -> Valido");
+            } else {
+                System.out.println("CAP: " + cap + " -> Non valido");
+            }
+        }
+    } 
+	
+	//Traccia:
+	//Conta il numero di parole in una stringa.
+	public static void main(String[] args) {
+	        String frase = "Questa è una frase, con punteggiatura!";
+	        Pattern pattern = Pattern.compile("\\b\\w+\\b");
+	        Matcher matcher = pattern.matcher(frase);
+
+	        int count = 0;
+	        while (matcher.find()) {
+	            count++;
+	        }
+
+	        System.out.println("Numero di parole: " + count);
+    } */
+	
+	//Traccia:
+	//Controlla se una stringa è un codice fiscale italiano (16 caratteri alfanumerici).
+	public static void main(String[] args) {
+        String[] codici = {
+            "RSSMRA85M01H501U", 
+            "RSSMRA85M01H501", 
+            "rssmra85m01h501u",  
+            "RSSMRA85M01H501!",  
+            "RSS MRA85M01H501U" 
+        };
+
+        Pattern pattern = Pattern.compile("^[A-Z0-9]{16}$");
+
+        for (String codice : codici) {
+            Matcher matcher = pattern.matcher(codice);
+
+            if (matcher.matches()) {
+                System.out.println(codice + " -> Valido");
+            } else {
+                System.out.println(codice + " -> Non valido");
+            }
+        }
+    }
+	
+	
+	
+	
+	
+	
+}
