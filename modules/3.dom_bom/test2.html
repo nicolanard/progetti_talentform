@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // //Traccia: Crea una funzione che mostra in console un messaggio dopo 2
+      // function mostraMsgDopoDueSec() {
+      //   setTimeout(() => {
+      //     console.log("hello world");
+      //   }, 2000);
+      // }
+
+      // //mostraMsgDopoDueSec();
+
+      // //Traccia: Crea una funzione che prende un nome e lo mostra dopo 1 secondo.
+      // function getAndShowNome(nome) {
+      //   setTimeout(() => {
+      //     console.log(nome);
+      //   }, 1000);
+      // }
+
+      // //getAndShowNome("Mario");
+
+      // //Traccia: Crea una funzione che conta da 1 a 5 con setInterval.
+      // function countFromOneToFive() {
+      //   let n = 1;
+      //   setInterval(() => {
+      //     if (n < 6) {
+      //       console.log(n);
+      //     }
+      //     n++;
+      //   }, 1000);
+      // }
+      //      // countFromOneToFive();
+
+      // //Traccia: Crea una funzione che parte da un numero e fa un conto alla rovescia.
+      // function contoAllaRovescia(partenza){
+      //   let numero = partenza;
+
+      //   const timer = setInterval(() => {
+      //       console.log(numero);
+
+      //       if(numero === 0){
+      //           clearInterval(timer);
+      //           console.log("Tempo scaduto. ");
+      //       }
+
+      //       numero--;
+      //   }, 1000);
+      // }
+
+      // contoAllaRovescia(10);
+
+      // //Traccia: Crea una funzione che alterna tra “ON” e “OFF” ogni 2 secondi.
+      // function alterna(){
+      //   let stato = false;
+
+      //   setInterval(() => {
+      //       stato = !stato;
+      //       console.log(stato ? "ON" : "OFF");
+      //   }, 2000);
+      // }
+
+      // alterna();
+
+
+      // //Traccia: Crea una funzione che mostra “Ping” ogni secondo per 3 volte.
+      // function mostra(){
+      //   let count = 0;
+
+      //   const intervallo = setInterval(() =>{
+      //       console.log("Ping");
+      //       count++;
+
+      //       if(count == 3){
+      //           clearInterval(intervallo);
+      //       }
+      //   }, 1000);
+      // }
+
+      // //mostra();
+
+      // // Traccia: Dato un array di numeri, restituisci un nuovo array con i valori raddoppiati.
+      // const raddoppiaArray = arr => arr.map(num => num * 2);
+
+      // console.log(raddoppiaArray([5, 10, 15]));
+
+      // //Traccia: Dato un array di stringhe, crea un array con la lunghezza di ciascuna parola.
+      // const lunghezzeParole = arr => arr.map(parola => parola.length);
+      // const parole = ["ciao", "mondo", "JS"];
+      // console.log(lunghezzeParole(parole));
+
+      // // Traccia: Ottieni solo i numeri pari da un array.
+      // const numeriPari = arr => arr.filter(num => num % 2 === 0);
+
+      // const numeri = [1, 2, 3, 4, 5, 6];
+      // console.log(numeriPari(numeri));
+
+      // // Traccia: Trova solo le parole con più di 5 lettere.
+      // const paroleLunghe = arr => arr.filter(parola => parola.length > 5);
+
+      // const parole = ["cane", "elefante", "gatto", "programmare", "sole"];
+      // console.log(paroleLunghe(parole));
+
+      // // Traccia: Trova il numero 7 in un array.
+      // const trovaSette = arr => arr.find(num => num === 7);
+
+      // const numeri = [4, 6, 7, 2, 9];
+      // console.log(trovaSette(numeri));
+
+      // // Traccia: Trova la prima parola che inizia con la lettera "j".
+      // const primaParolaConJ = arr => arr.find(parola => parola.toLowerCase().startsWith("j"));
+
+      // const parole = ["cane", "gatto", "juventus", "sole"];
+      // console.log(primaParolaConJ(parole));
+
+      // // Traccia: Trasforma un array di numeri in un array di oggetti {numero: x}.
+      // // Filtrare oggetti per proprietà
+      // const numeriInOggetti = arr => arr.map(num => ({ numero: num }));
+
+      // const numeri = [1, 2, 3];
+      // console.log(numeriInOggetti(numeri));
+
+      // // Traccia: Trova solo gli utenti maggiorenni da un array di oggetti.
+      // const utentiMaggiorenni = utenti => utenti.filter(utente => utente.età >= 18);
+
+      // const utenti = [
+      //   { nome: "Anna", età: 17 },
+      //   { nome: "Luca", età: 20 },
+      //   { nome: "Sara", età: 18 }
+      // ];
+
+      // console.log(utentiMaggiorenni(utenti));
+
+      // //Traccia: Trova l’utente con nome “Marta”.
+      // const trovaMarta = utenti => utenti.find(utente => utente.nome === "Marta");
+
+      // const utenti = [
+      //   { nome: "Luca", età: 20 },
+      //   { nome: "Marta", età: 25 },
+      //   { nome: "Giulia", età: 18 }
+      // ];
+
+      // console.log(trovaMarta(utenti));
+
+      // //Traccia: Ottieni solo i nomi degli utenti.
+      // const estraiNomi = utenti => utenti.map(utente => utente.nome);
+
+      // console.log(estraiNomi(utenti));
+
+      // // Traccia: Ottieni solo i numeri > 10.
+      // const numeriMaggioriDiDieci = arr => arr.filter(num => num > 10);
+
+      // const numeri = [4, 12, 8, 20, 5, 15];
+      // console.log(numeriMaggioriDiDieci(numeri)); 
+
+      // //Creare array di stringhe maiuscole
+      // //Traccia: Converti tutte le parole in maiuscolo con map.
+      // const paroleMaiuscole = arr => arr.map(parola => parola.toUpperCase());
+
+      // const parole = ["ciao", "mondo", "javascript"];
+      // console.log(paroleMaiuscole(parole)); 
+
+      // //Filtrare numeri negativi
+      // //Traccia: Ottieni solo i numeri negativi.
+      // const numeriNegativi = arr => arr.filter(num => num < 0);
+
+      // const numeri = [10, -5, 0, -8, 12];
+      // console.log(numeriNegativi(numeri)); 
+
+      // //Usare insieme map e filter
+      // //Traccia: Da un array di numeri, raddoppia solo quelli dispari.
+      // const raddoppiaDispari = arr =>
+      // arr.filter(num => num % 2 !== 0)  
+      //   .map(num => num * 2);          
+
+      // const numeri = [1, 2, 3, 4, 5];
+      // console.log(raddoppiaDispari(numeri)); 
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

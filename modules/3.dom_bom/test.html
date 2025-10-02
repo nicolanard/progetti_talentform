@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="welcome">Benvenuto in HTML</h1>
+     <h1 id="javascript">javascript</h1>
+     <a id="link">Google</a>
+
+     <script>
+        document.getElementById("javascript").innerHTML =
+        "JAVASCRIPT";
+        
+        document.getElementById("javascript").style.marginLeft = "20%"
+        document.getElementById("javascript").style.marginRight = "20%"
+        document.getElementById("javascript").style.color = "brown";
+        document.getElementById("javascript").style.backgroundColor = "yellow";
+        document.getElementById("javascript").style.textAlign = "center";
+        document.getElementById("javascript").style.fontFamily = "Courier";
+        document.getElementById("javascript").style.fontSize = "25 sp";
+
+        let js = (document.getElementById("welcome").innerHTML =
+        "Benvenuto in JAVASCRIPT");
+        
+        document.getElementById("welcome").style.marginLeft = "20%"
+        document.getElementById("welcome").style.marginRight = "20%"
+        document.getElementById("welcome").style.color = "brown";
+        document.getElementById("welcome").style.backgroundColor = "yellow";
+        document.getElementById("welcome").style.textAlign = "center";
+        document.getElementById("welcome").style.fontFamily = "Courier";
+        document.getElementById("welcome").style.fontSize = "25 sp";
+
+        document.getElementById("link").setAttribute("href", "https://www.google.com");
+
+     </script>
+
+     
+</body>
+</html>
