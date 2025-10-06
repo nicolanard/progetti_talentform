@@ -22,6 +22,24 @@ const employe: ElevatedEmployee = {
 
 console.log(employe);
 
+// type Admin1={
+//   nome:string;
+//   grade:string[];
+// }
+// type Employee = {
+//   startDate: Date;
+// };
+// type Worker1={
+//   worker:string;
+// }
+// type Lavoratore=Admin1 &Worker1&Employee;
+// const lavoratore1:Lavoratore={
+//   nome:'Luca',
+//   grade:['Team Leader'],
+//   worker:'Developer',
+//   startDate:new Date(),
+// }
+
 
 
 
